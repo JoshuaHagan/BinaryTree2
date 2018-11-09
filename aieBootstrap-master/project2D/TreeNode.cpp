@@ -2,11 +2,22 @@
 #include "Font.h"
 #include <iostream>
 
+TreeNode::TreeNode(int value)
+{
+	 m_left = nullptr;
+	 m_right = nullptr;
+}
+
+TreeNode::~TreeNode()
+{
+
+}
+
 void TreeNode::draw(aie::Renderer2D* renderer, int x, int y, bool selected)
 {
 	static char buffer[10];
 
-	sprint(buffer, "%d", m_value);
+	sprintf(buffer, "%d", m_value);
 
 	renderer->setRenderColour(1, 1, 0);
 	renderer->drawCircle(x, y, 30);

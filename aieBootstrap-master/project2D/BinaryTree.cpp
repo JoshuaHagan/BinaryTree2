@@ -45,56 +45,65 @@ void BinaryTree::insert(int a_nValue)
 	
 	while (current != nullptr)
 	{
-		if (current->getData < a_nValue)
+		if (current->getData() < a_nValue)
 		{
-			current->getLeft;
+			current->getLeft();
+			current = m_pRoot->getLeft();
 		}
-		else if (current->getData > a_nValue)
+		else if (current->getData() > a_nValue)
 		{
-			current->getRight;
+			current->getRight();
+			current = m_pRoot->getRight();
 		}
-		else if (current->getData == a_nValue)
+		else if (current->getData() == a_nValue)
 			return;
 	}
 
-	if (a_nValue < parent->getData)
+	if (a_nValue < parent->getData())
 	{
-		parent->getLeft;
+		parent->getLeft();
+		current = parent->getLeft();
 	}
-	else if (a_nValue > parent->getData)
+	else if (a_nValue > parent->getData())
 	{
-		parent->getRight;
+		parent->getRight();
+		current = parent->getRight();
 	}
 }  
 
 bool BinaryTree::findNode(int a_nSearchValue, TreeNode** ppOutNode, TreeNode** ppOutParent)
 {
-	TreeNode* current;
-	TreeNode* parent;
+	TreeNode* current = m_pRoot;
 
 	current = m_pRoot;
 	while (current != nullptr)
 	{
-		if (a_nSearchValue == current->getData)
+		if (a_nSearchValue == current->getData())
 		{
 			return true;
 		}
-		else if(a_nSearchValue < current->getData)
+		else if(a_nSearchValue < current->getData())
 		{
-			current->getLeft;
+			current->getLeft();
+			current = m_pRoot->getLeft();
 		}
 		else
 		{
-			current->getRight;
+			current->getRight();
+			current = m_pRoot->getRight();
 		}
 	}
 	return false;
 }
 
-void BinaryTree::remove(int value)
-{
-	TreeNode* ppOutNode;
-	TreeNode* ppOutParent;
-
-	if (ppOutNode->getData);
-}
+//void BinaryTree::remove(int value)
+//{
+//	TreeNode* ppOutNode;
+//	TreeNode* ppOutParent;
+//
+//	while (ppOutParent != nullptr)
+//	{
+//		ppOutNode->getLeft;
+//		
+//	}
+//}++
