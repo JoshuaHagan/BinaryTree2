@@ -1,12 +1,14 @@
 #include "BinaryTree.h"
 
-void BinaryTree::draw(aie::Renderer2D* renderer, TreeNode* selected)
+void BinaryTree::draw(aie::Renderer2D* renderer,aie::Font* g_systemFont, TreeNode* selected)
 {
-	draw(renderer, m_pRoot, 640, 680, 640, selected);
+	draw(renderer, m_pRoot, 640, 680, 640, g_systemFont ,selected);
+	
 }
 
-void BinaryTree::draw(aie::Renderer2D* renderer, TreeNode* pNode, int x, int y, int horizontalSpacing, TreeNode* selected)
+void BinaryTree::draw(aie::Renderer2D* renderer, TreeNode* pNode, int x, int y, int horizontalSpacing, aie::Font* g_systemFont, TreeNode* selected)
 {
+
 	horizontalSpacing /= 2;
 
 	if (pNode)
@@ -15,17 +17,17 @@ void BinaryTree::draw(aie::Renderer2D* renderer, TreeNode* pNode, int x, int y, 
 		{
 			renderer->setRenderColour(1, 0, 0);
 			renderer->drawLine(x, y, x - horizontalSpacing, y - 80);
-			draw(renderer, pNode->getLeft(), x - horizontalSpacing, y - 80, horizontalSpacing, selected);
+			draw(renderer, pNode->getLeft(), x - horizontalSpacing, y - 80, horizontalSpacing, g_systemFont, selected);
 		}
 
 		if (pNode->hasRight())
 		{
 			renderer->setRenderColour(1, 0, 0);
 			renderer->drawLine(x, y, x + horizontalSpacing, y - 80);
-			draw(renderer, pNode->getRight(), x + horizontalSpacing, y - 80, horizontalSpacing, selected);
+			draw(renderer, pNode->getRight(), x + horizontalSpacing, y - 80, horizontalSpacing, g_systemFont, selected);
 		}
 		
-		pNode->draw(renderer, x, y, (selected == pNode));
+		pNode->draw(renderer, x, y, g_systemFont, (selected == pNode));
 	}
 }
 
@@ -96,14 +98,22 @@ bool BinaryTree::findNode(int a_nSearchValue, TreeNode** ppOutNode, TreeNode** p
 	return false;
 }
 
-//void BinaryTree::remove(int value)
-//{
-//	TreeNode* ppOutNode;
-//	TreeNode* ppOutParent;
-//
-//	while (ppOutParent != nullptr)
-//	{
-//		ppOutNode->getLeft;
-//		
-//	}
-//}++
+void BinaryTree::remove(int value)
+{
+	TreeNode* ppOutNode;
+	TreeNode* ppOutParent;
+	TreeNode* current;
+
+	while (ppOutParent != nullptr)
+	{
+		if (ppOutNode->getRight())
+		{
+			ppOutNode->getLeft;
+			current->getData;
+			current->getLeft;
+			
+		}
+		
+		
+	}
+}

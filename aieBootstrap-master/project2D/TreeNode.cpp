@@ -2,6 +2,7 @@
 #include "Font.h"
 #include <iostream>
 
+extern aie::Font* g_systemFont;
 TreeNode::TreeNode(int value)
 {
 	 m_left = nullptr;
@@ -13,7 +14,7 @@ TreeNode::~TreeNode()
 
 }
 
-void TreeNode::draw(aie::Renderer2D* renderer, int x, int y, bool selected)
+void TreeNode::draw(aie::Renderer2D* renderer, int x, int y, aie::Font* g_systemFont, bool selected)
 {
 	static char buffer[10];
 
@@ -28,8 +29,7 @@ void TreeNode::draw(aie::Renderer2D* renderer, int x, int y, bool selected)
 		renderer->setRenderColour(0, 0, 0);
 	renderer->drawCircle(x, y, 28);
 
-	renderer->setRenderColour(1, 1, 1);
-	extern aie::Font* g_systemFont;
+	renderer->setRenderColour(1, 1, 1);	
 	renderer->drawText(g_systemFont, buffer, x - 12, y - 10);
 	
 }
