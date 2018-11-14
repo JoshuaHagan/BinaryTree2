@@ -11,8 +11,8 @@ public:
 
 	bool isEmpty() const { return false; }
 	void insert(int a_nValue);
-	void remove(int a_nValue) {}
-	TreeNode* find(int a_nValue) {}
+	void remove(int a_nValue);
+	TreeNode* find(int a_nValue);
 	void draw(aie::Renderer2D* renderer,aie::Font* g_systemFont, TreeNode* selected = nullptr);
 private:
 	bool findNode(int a_nSearchValue, TreeNode** ppOutNode, TreeNode** ppOutParent);
