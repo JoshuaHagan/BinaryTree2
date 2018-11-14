@@ -100,18 +100,21 @@ bool BinaryTree::findNode(int a_nSearchValue, TreeNode** ppOutNode, TreeNode** p
 
 void BinaryTree::remove(int value)
 {
-	TreeNode* ppOutNode;
-	TreeNode* ppOutParent;
-	TreeNode* current;
+	TreeNode* currentNode;
+	TreeNode* ParentNode;
 
-	while (ppOutParent != nullptr)
+	while (ParentNode != nullptr)
 	{
-		if (ppOutNode->getRight())
+		if (currentNode->hasRight())
 		{
-			ppOutNode->getLeft;
-			current->getData;
-			current->getLeft;
-			
+			currentNode = ParentNode;
+			currentNode = currentNode->getRight;
+		}
+
+		while (currentNode->hasLeft)
+		{
+			currentNode = ParentNode;
+			currentNode = currentNode->getLeft;
 		}
 		
 		
