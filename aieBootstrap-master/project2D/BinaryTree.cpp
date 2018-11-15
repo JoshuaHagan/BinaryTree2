@@ -31,6 +31,17 @@ void BinaryTree::draw(aie::Renderer2D* renderer, TreeNode* pNode, int x, int y, 
 	}
 }
 
+bool BinaryTree::isEmpty() const
+{
+	if (m_pRoot != nullptr)
+	{
+		m_pRoot == nullptr;
+		
+		return false;
+	}
+	return true;
+}
+
 void BinaryTree::insert(int a_nValue)
 {
 	TreeNode* current;
@@ -39,10 +50,13 @@ void BinaryTree::insert(int a_nValue)
 	if (isEmpty())
 	{
 		m_pRoot = new TreeNode(a_nValue);
+		m_pRoot == nullptr;
+		return;
 	}	
 	else
 	{
 		current = m_pRoot;
+		return;
 	}
 	
 	while (current != nullptr)
@@ -50,12 +64,12 @@ void BinaryTree::insert(int a_nValue)
 		if (current->getData() < a_nValue)
 		{
 			current->getLeft();
-			current = m_pRoot->getLeft();
+			current = current->getLeft();
 		}
 		else if (current->getData() > a_nValue)
 		{
 			current->getRight();
-			current = m_pRoot->getRight();
+			current = current->getRight();
 		}
 		else if (current->getData() == a_nValue)
 			return;
